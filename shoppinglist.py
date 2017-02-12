@@ -1,3 +1,4 @@
+
 # # create shopping list
 
 # 11 create a shopping list{}
@@ -51,6 +52,21 @@ def add_item(add_item_list):
     shopping_list[add_item_list].append(add_item)
     print shopping_list
 
+def remove_item():
+    remove_item = raw_input('what shopping item would you like to remove? ')
+    remove_list = raw_input('what shopping list would you like to remove? ')
+    if remove_item in shopping_list[remove_list]:
+        print shopping_list[remove_list]
+        shopping_list[remove_list].remove(remove_item)
+        print shopping_list[remove_list]
+
+def remove_list():
+    remove_list = raw_input('what shopping list would you like to remove? ')
+    if remove_list in shopping_list:
+        print shopping_list[remove_list]
+        del shopping_list[remove_list]
+        print 'the left shopping list ', shopping_list
+
 
 
 
@@ -65,10 +81,13 @@ def print_direction():
     print '7 - Exit when you are done.'
 
 def main():
-    user_list = int(raw_input('What options you want? 0-7 and 7 is exit '))
-    print user_list
-    print type(user_list)
+
+    # print user_list
+    # print type(user_list)
     while (True):
+        print_direction()
+        user_list = int(raw_input('What options you want? 0-7 and 7 is exit '))
+
         if user_list == 7:
             break
         elif user_list == 0:
@@ -81,10 +100,15 @@ def main():
             add_shopping_list()
         elif user_list == 4:
             add_item_list = raw_input('What is the list you want to add item? ')
-                while add_item_list != 'q':
-                    print shopping_list[add_item_list]
-                    add_item(add_item_list)
+            print shopping_list[add_item_list]
+            add_item(add_item_list)
+            print shopping_list
+        elif user_list == 5:
+            print remove_item()
+        elif user_list == 6:
+            print remove_list()
 
+                
 
 
 
