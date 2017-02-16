@@ -67,6 +67,20 @@ def remove_list():
         del shopping_list[remove_list]
         print 'the left shopping list ', shopping_list
 
+def read_list():
+    
+
+
+def save_list(shopping_list):
+    print shopping_list
+    with open('shopping.txt','w') as menu_file:
+        for menu_item in shopping_list:
+            menu_file.write(menu_item+':'+",".join(shopping_list[menu_item])+'/n')
+    with open('shopping.txt') as menu_file:
+        print menu_file.read()
+
+
+
 
 
 
@@ -78,7 +92,15 @@ def print_direction():
     print '4 - Add an item to a shopping list.'
     print '5 - Remove an item from a shopping list.'
     print '6 - Remove a list by nickname.'
-    print '7 - Exit when you are done.'
+    print '7 - save existing list.'
+    print '8 - read existing list.'
+    print '9 - Exit when you are done.'
+
+
+
+
+
+
 
 def main():
 
@@ -88,7 +110,7 @@ def main():
         print_direction()
         user_list = int(raw_input('What options you want? 0-7 and 7 is exit '))
 
-        if user_list == 7:
+        if user_list == 9:
             break
         elif user_list == 0:
             print print_direction
@@ -107,6 +129,8 @@ def main():
             print remove_item()
         elif user_list == 6:
             print remove_list()
+        elif user_list == 7:
+            print save_list(shopping_list)
 
                 
 
