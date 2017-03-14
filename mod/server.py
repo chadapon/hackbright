@@ -17,15 +17,44 @@ def index():
 def say_hello():
     """Say hello"""
 
-    return "" #add code here to greet user
+    return '''
+    <html>
+        <body>
+            <h1><a href='/' >Say Hello</a></h1>
+        </body>
+    </html>
+    '''
 
 @app.route('/lucky')
 def lucky_number():
     """Provides a random lucky number"""
     # add code here of getting a lucky number and return a string
     # with the lucky number
+    lucky_number = randint(1,10)
+    print lucky_number
+    lucky_message = "Your lucky number is %s" % lucky_number
+    print lucky_message
 
-    return ""
+
+    return "<html><body><h1>" + lucky_message + "</h1></body></html>"
+
+
+    # '''
+    # <html>
+    #     <style>
+    #     a {
+    #     color:green;
+    #     }
+    #     p {
+    #     color:pink;
+    #     }
+    #     </style>
+    #     <body>
+    #         <h1><a href='/' >Luck number</a></h1>
+    #         <p>Test</p>
+    #     </body>
+    # </html>
+    # '''
 
 
 if __name__ == '__main__':
