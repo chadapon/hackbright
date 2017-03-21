@@ -37,10 +37,13 @@ url = (response.businesses[0].url)
 rating = (response.businesses[0].rating)
 address = (response.businesses[0].location.address)
 
-print (name,url)
+
+print (name)
+print (type(name))
+print (url)
+print (type(url))
 
 
-#for i in businesses;
 
 
 
